@@ -1,20 +1,10 @@
 Name: Lynsey Kemplin, Amelia Laborte, Edwin Soto, Davita Ford
  Project Title: Something related to music - TBD
  Project Stack: MERN
- GitHub Repo Link: https://github.com/LKemplin/Solo_Project_Book_Thoughts
+ GitHub Repo Link: https://github.com/LKemplin/Group_9_Project
 
- Project Description: A website where users can rate and add their thoughts about the books they read.
+ Project Description: A website where users can pick songs they like and write about them
  
-New Programming Concept(s) I'm Planning to Learn:  How to use bootstrap to make responsive websites, creating login and registration with MERN, deployment
-
-Week 1 Features (to show at Review during Week 2): Backend and CRUD
-
-Week 2 Features (to show at the first office hour/lecture of Week 3): responsive front end with bootstrap, login and registration (hopefully)
-
-
-Product Backlog (If I have more time after completing my MVP, I'll start to work on...):
-login and registration
-deployment
-uploading pictures of book covers with books
-connecting to Google Books API to search and add books
-Commenting on other users' posts
+Front-End: Davita & Edwin
+API Integration & Backend: Amelia
+General backend (and login/reg attempt): Lynsey
