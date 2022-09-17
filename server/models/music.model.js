@@ -21,4 +21,4 @@ const MusicSchema = new mongoose.Schema({
     }
 }, {timestamps: true})
 
-module.exports = mongoose.model("Music", )
+module.exports = mongoose.model("Music", MusicSchema)
