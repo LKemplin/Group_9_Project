@@ -9,11 +9,18 @@ const MusicSchema = new mongoose.Schema({
     },
     artist: {
         type: String,
-        required: [true, "Must enter song title."]
+        required: [true, "Must enter artist name."]
     },
-    description: {
+    album: {
+        type: String
+    },
+    postedBy: {
         type: String,
-        required: [true, "Must enter description."]
+        required: [true, "Must enter poster's name."]
+    },
+    rating: {
+        type: Number,
+        required: [true, "Please rate your song."]
     },
     quote: {
         type: String,
