@@ -1,38 +1,64 @@
 .App {
   text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+  background-color: rebeccapurple;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-shadow: 1px 1px black;
+  color: lavender;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn {
+  background-color: lavender;
+  box-shadow: 1px 1px black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.btn-submit {
+  background-color: thistle;
+}
+
+.card {
+  margin: 5px;
+  background-color: thistle;
+}
+
+.book-form {
+  background-color: lavender;
+}
+
+.card-main {
+  width: 18rem;
+}
+
+a:hover {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#book-thoughts {
+  color: lavender;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#card-footer-dashboard {
+  background-color: transparent;
+  border-top: 0px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.on {
+  color: #000;
+}
+
+.off {
+  color: #ccc;
 }
