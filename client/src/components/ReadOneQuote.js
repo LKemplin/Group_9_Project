@@ -10,7 +10,7 @@ const ReadOneQuote = (props) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/songs/${id}`)
+      .get(`http://localhost:8000/api/music/${id}`)
       .then((results) => {
         console.log(results.data);
         setSong(results.data);
@@ -22,7 +22,7 @@ const ReadOneQuote = (props) => {
 
   const deleteHandler = (id) => {
     axios
-      .delete(`http://localhost:8000/api/songs/${id}`)
+      .delete(`http://localhost:8000/api/music/${id}`)
       .then((res) => {
         removeFromList(id);
         navigate("/");

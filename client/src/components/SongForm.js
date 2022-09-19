@@ -9,7 +9,7 @@ const SongForm = () => {
   const [album, setAlbum] = useState("");
   const [postedBy, setPostedBy] = useState("");
   const [rating, setRating] = useState();
-  const [quotes, setQuotes] = useState();
+  const [quote, setQuote] = useState();
   const [errors, setErrors] = useState({});
 
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ const SongForm = () => {
         album,
         postedBy,
         rating,
-        quotes,
+        quote,
       })
       .then((results) => {
         console.log(results);
@@ -99,15 +99,15 @@ const SongForm = () => {
           </div>
           <div>
             <label className="form-label">Quote:</label>
-            {errors.quotes && (
-              <p className="text-danger">{errors.quotes.message}</p>
+            {errors.quote && (
+              <p className="text-danger">{errors.quote.message}</p>
             )}
-            {/* <input type="text" className='form-control' onChange={(e) => setTitle(e.target.value)} /> */}
+
             <textarea
               className="form-control"
               cols="30"
               rows="10"
-              onChange={(e) => setQuotes(e.target.value)}
+              onChange={(e) => setQuote(e.target.value)}
             ></textarea>
           </div>
           <div>

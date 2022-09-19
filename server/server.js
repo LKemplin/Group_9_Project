@@ -8,5 +8,6 @@ app.use(cors());
 
 require('./config/mongoose.config');
 require('./routes/music.routes')(app);
+require('./routes/user.routes')(app);
 
 app.listen(PORT, () => console.log(`Listening on Port ${PORT}`));

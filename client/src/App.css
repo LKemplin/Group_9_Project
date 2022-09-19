@@ -5,7 +5,7 @@
 }
 
 .navbar {
-  background-color: rebeccapurple;
+  background-color: rgb(45, 30, 61);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   text-shadow: 1px 1px black;
@@ -13,8 +13,8 @@
 }
 
 .btn {
-  background-color: lavender;
-  box-shadow: 1px 1px black;
+  background-color: rgb(61, 61, 175);
+  box-shadow: 4px 4px black;
 }
 
 .btn-submit {
@@ -22,8 +22,12 @@
 }
 
 .card {
-  margin: 5px;
-  background-color: thistle;
+  margin: 125px;
+  margin-bottom: 100px;
+  background-color: rgb(228, 151, 113);
+  text-emphasis-color: purple;
+  text-emphasis: inherit;
+  opacity: 50%;
 }
 
 .book-form {
@@ -61,4 +65,10 @@ button {
 
 .off {
   color: #ccc;
+}
+
+.container {
+  background-image: url(./img/actionvance-eXVd7gDPO9A-unsplash.jpg);
+  object-fit: fill;
+  background-repeat: no-repeat;
 }

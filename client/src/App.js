@@ -20,7 +20,7 @@ function App() {
     setSongCards(newSongCards);
   };
   return (
-    <div className="App">
+    <div className="App container">
       {/* <NavBar /> */}
       <BrowserRouter>
         <Routes>
