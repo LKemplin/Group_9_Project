@@ -1,3 +1,35 @@
+#button-container {
+  margin-left: 20px;
+  justify-content: left;
+  gap: 30px;
+}
+
+#test {
+  margin-left: 1075px;
+}
+
+#page-content-container {
+}
+
+#post-container {
+  border: 2px solid black;
+  width: 700px;
+  height: 550px;
+}
+
+#user-blog {
+  border: 2px solid black;
+}
+
+#song-desc {
+  justify-content: space-evenly;
+}
+
+#show {
+  justify-content: right;
+  margin-right: 60px;
+}
+
 .App {
   text-align: center;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -10,12 +42,15 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   text-shadow: 1px 1px black;
-  color: lavender;
+  color: rgb(45, 30, 61);
+  width: 2000px;
+  border: 2px dotted red;
 }
 
 .btn {
   background-color: rgb(61, 61, 175);
   box-shadow: 4px 4px black;
+  font-size: 20px;
 }
 
 .btn-submit {
@@ -78,6 +113,57 @@ button {
   background-image: url(./img/actionvance-eXVd7gDPO9A-unsplash.jpg);
   object-fit: fill;
   background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-evenly;
+  height: 100%;
+  padding: 20px;
+
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+}
+
+.form-container {
+  margin-top: 35px;
+}
+
+.form-container-lr {
+  margin-top: 75px;
+}
+
+.form-group {
+  display: flex;
+  margin: 20px;
+}
+
+.login-registration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-label {
+  text-align: center;
+  margin-right: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+#song-quotes {
+  font-size: 40px;
+}
+
+.welcome {
+  position: absolute;
+  text-align: center;
+  color: rgb(45, 30, 61);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-shadow: 1px 1px black;
 }
 
 .font-link {

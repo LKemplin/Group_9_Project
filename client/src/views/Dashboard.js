@@ -7,8 +7,10 @@ const Dashboard = (props) => {
   return (
     <div>
       <NavBar />
-      <hr />
-      <SongQuotesCards songCards={songCards} setSongCards={setSongCards} />
+      <br></br>
+      <div className="" style={{ border: "2px dotted green" }}>
+        <SongQuotesCards songCards={songCards} setSongCards={setSongCards} />
+      </div>
     </div>
   );
 };
