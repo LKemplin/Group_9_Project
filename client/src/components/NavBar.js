@@ -5,10 +5,10 @@ const navbar = () => {
   return (
     <div className="d-flex justify-content-around navbar">
       <Link to="/" id="song-quotes">
-        <h1>Song Quotes</h1>
+        <h1 className="font-link">LyriQuote</h1>
       </Link>
       <Link to="/songquotes/add">
-        <button className="btn">Add Quotes</button>
+        <button className="btn">Add Lyric Quote</button>
       </Link>
       <button className="btn">Log In</button>
     </div>

@@ -40,7 +40,7 @@ const SongForm = () => {
     <div className="container">
       <div className="d-flex justify-content-center m-3 form-div">
         <form
-          className="form p-3 border border-dark border-1 text-center song-form"
+          className="form p-3 border border-dark border-1 text-center song-form song-bg"
           onSubmit={submitHandler}
         >
           <div>
@@ -98,7 +98,7 @@ const SongForm = () => {
             <StarRating rating={rating} setRating={setRating} />
           </div>
           <div>
-            <label className="form-label">Quote:</label>
+            <label className="form-label">Lyric Quote:</label>
             {errors.quote && (
               <p className="text-danger">{errors.quote.message}</p>
             )}
@@ -112,7 +112,7 @@ const SongForm = () => {
           </div>
           <div>
             <button className="btn btn-info-outline-dark m-3 btn-submit">
-              Add Quote
+              Add Lyric Quote
             </button>
           </div>
         </form>
