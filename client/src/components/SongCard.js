@@ -19,7 +19,7 @@ const SongCard = (props) => {
   };
 
   return (
-    <div className="card card-main">
+    <div className="card card-main song-bg">
       <h3 className="card-title">Title: {songCard.title}</h3>
       <h4 className="card-subtitle">Artist: {songCard.artist}</h4>
       <div className="card-body">
@@ -30,12 +30,13 @@ const SongCard = (props) => {
               {new Date(songCard.updatedAt).toLocaleDateString()}
             </li>
             <li>Rating: {displayStarRating(songCard.rating)}</li>
+            {/* <li>Lyric Quote: {songCard.quote}</li> */}
           </ul>
         </p>
       </div>
       <div className="card-footer" id="card-footer-dashboard">
         <Link to={`/songquotes/details/${songCard._id}`}>
-          <button className="btn btn-outline-dark">Read Quotes</button>
+          <button className="btn btn-outline-dark">Read Lyric Quote</button>
         </Link>
       </div>
     </div>

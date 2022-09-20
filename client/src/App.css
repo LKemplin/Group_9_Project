@@ -34,6 +34,7 @@
   text-align: center;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding-bottom: 120px;
 }
 
 .navbar {
@@ -57,28 +58,34 @@
 }
 
 .card {
-  margin: 125px;
-  margin-bottom: 100px;
+  margin: 40px;
+  margin-bottom: 50px;
   background-color: rgb(228, 151, 113);
-  text-emphasis-color: purple;
-  text-emphasis: inherit;
   opacity: 50%;
+  text-emphasis-color: purple;
+  text-decoration: #000;
 }
 
-.book-form {
-  background-color: lavender;
+.song-form {
+  background-color: transparent;
 }
 
 .card-main {
-  width: 18rem;
+  width: 55rem;
+  height: 10rem;
 }
+
+/* .song-bg {
+  background-color: rgb(228, 151, 113);
+  opacity: 50%;
+} */
 
 a:hover {
   color: white;
 }
 
-#book-thoughts {
-  color: lavender;
+#song-quotes {
+  color: rgb(228, 151, 113);
   text-decoration: none;
 }
 
@@ -157,4 +164,8 @@ a {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   text-shadow: 1px 1px black;
+}
+
+.font-link {
+  font-family: "Bungee Spice", cursive;
 }

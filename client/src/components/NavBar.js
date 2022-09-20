@@ -21,12 +21,19 @@ const navbar = () => {
   return (
     <div className="d-flex justify-content-around navbar">
       <Link to="/" id="song-quotes">
+<<<<<<< HEAD
+        <h1 className="font-link">LyriQuote</h1>
+      </Link>
+      <Link to="/songquotes/add">
+        <button className="btn">Add Lyric Quote</button>
+=======
         {icons} Song Quotes
       </Link>
       <Link to="/songquotes/add">
         <a href="/songquotes/add" className="fs-3">
           {circle} Add Quotes
         </a>
+>>>>>>> 22b1989ad63b54d92c3a219389a9effdcc7d3acb
       </Link>
       <a href="/login" className="btn">
         {logout} Login
