@@ -17,7 +17,7 @@ const EditSongQuote = (props) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/songs/${id}`)
+      .get(`http://localhost:8000/api/music/${id}`)
       .then((results) => {
         console.log(results.data);
         setTitle(results.data.title);
@@ -28,14 +28,14 @@ const EditSongQuote = (props) => {
         setQuotes(results.data.quotes);
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.data);
       });
   }, []);
 
   const updateHandler = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:8000/api/songs/update/${id}`, {
+      .put(`http://localhost:8000/api/music/update/${id}`, {
         title,
         artist,
         album,
