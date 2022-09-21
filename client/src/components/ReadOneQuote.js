@@ -32,7 +32,7 @@ const ReadOneQuote = (props) => {
 
   return (
     <div className="container-fluid d-flex justify-content-center">
-      <div className="card col-8 song-bg">
+      <div className="card col-8">
         <h2 className="card-title">{song.title}</h2>
         <h3 className="card-subtitle">{song.artist}</h3>
         {song.album && (
