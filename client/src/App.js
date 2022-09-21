@@ -5,7 +5,8 @@ import Dashboard from "./views/Dashboard";
 import AddQuotes from "./views/AddQuotes";
 import Details from "./views/Details";
 import EditQuote from "./views/EditQuote";
-import Logandreg from "./components/logandreg";
+import Logandreg from "./components/Logandreg";
+import Registration from "./components/Registration";
 // import logo from "./logo.svg";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -13,6 +14,7 @@ import NavBar from "./components/NavBar";
 
 function App() {
   const [songCards, setSongCards] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const removeFromList = (songID) => {
     const newSongCards = songCards.filter((song) => {
@@ -25,7 +27,14 @@ function App() {
       {/* <NavBar /> */}
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<Logandreg />} />
+          <Route
+            path="/login"
+            element={<Logandreg setIsLoggedIn={setIsLoggedIn} />}
+          />
+          <Route
+            path="/register"
+            element={<Registration setIsLoggedIn={setIsLoggedIn} />}
+          />
           <Route path="/" element={<Navigate to="/songquotes/dashboard" />} />
           <Route
             path="/songquotes/dashboard"
