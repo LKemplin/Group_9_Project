@@ -34,7 +34,7 @@
   text-align: center;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  padding-bottom: 120px;
+  /* padding-bottom: 120px; */
 }
 
 .navbar {
@@ -43,7 +43,7 @@
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   text-shadow: 1px 1px black;
   color: rgb(45, 30, 61);
-  width: 2000px;
+  width: 100%;
   border: 2px dotted red;
 }
 
@@ -111,11 +111,13 @@ button {
 
 .container {
   background-image: url(./img/actionvance-eXVd7gDPO9A-unsplash.jpg);
-  object-fit: fill;
+  background-size: cover;
+  /* object-fit: cover; */
   background-repeat: no-repeat;
-  display: flex;
-  justify-content: space-evenly;
-  height: 100%;
+  /* display: flex;
+  justify-content: space-evenly; */
+  width: 100%;
+  height: max-content;
   padding: 20px;
 
   position: absolute;
@@ -169,3 +171,12 @@ a {
 .font-link {
   font-family: "Bungee Spice", cursive;
 }
+
+/* .div {
+  width: 100%;
+  height: auto;
+  background-image: url(./img/actionvance-eXVd7gDPO9A-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 2px solid #e9385a;
+} */
