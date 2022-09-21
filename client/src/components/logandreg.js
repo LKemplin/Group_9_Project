@@ -54,120 +54,113 @@ const Logandreg = (props) => {
   };
 
   return (
-    <div className="container">
-      <div className="welcome">
-        <h1 className="">Welcome! {icons} SongQuotes</h1>
-      </div>
-      <div className="form-container-lr">
-        <h1 className="text text-light">Login</h1>
-        {/* Login Form */}
-        <form className="login-registration" onSubmit={loginHandler}>
-          <div className="form-group">
-            <label className="form-label">Email: </label>
-            <input
-              className="form-control"
-              type="text"
-              name="email"
-              //   value={user.email}
-            />
-          </div>
-          {errors.error && <p className="text-danger">{errors.error}</p>}
-          <br></br>
-          <div className="form-group">
-            <label className="form-label fw-bold">Password: </label>
-            <input
-              className="form-control"
-              type="password"
-              name="password"
-              //   value={user.password}
-            />
-          </div>
-          {errors.password && (
-            <p className="text-danger">{errors.password.message}</p>
-          )}
-          <br></br>
-          <button
-            className="btn text text-dark fw-bolder"
-            style={{ backgroundColor: "transparent" }}
-          >
-            Login
-          </button>
-        </form>
-      </div>
-      {/* Registration Form */}
-      <div className="form-container-lr">
-        <h1 className="text text-light">Register</h1>
-        <form className="login-registration" onSubmit={registerHandler}>
-          <div className="form-group">
-            <label className="form-label">First Name:</label>
-            <input
-              type="text"
-              className="form-control"
-              onChange={(e) => setFirstName(e.target.value)}
-              name="firstNme"
-            />
-          </div>
-          {errors.firstName && (
-            <p className="text-danger">{errors.firstName.message}</p>
-          )}
-          <div className="form-group">
-            <label className="form-label">Last Name:</label>
-            <input
-              type="text"
-              className="form-control"
-              onChange={(e) => setLastName(e.target.value)}
-              name="lastName"
-            />
-          </div>
-          {errors.lastName && (
-            <p className="text-danger">{errors.lastName.message}</p>
-          )}
-          <div className="form-group">
-            <label className="form-label">Email:</label>
-            <input
-              type="text"
-              className="form-control"
-              onChange={(e) => setEmail(e.target.value)}
-              name="email"
-            />
-          </div>
-          {errors.email && (
-            <p className="text-danger">{errors.email.message}</p>
-          )}
-          <div className="form-group">
-            <label className="form-label">Password:</label>
-            <input
-              type="password"
-              className="form-control"
-              onChange={(e) => setPassword(e.target.value)}
-              name="password"
-            />
-          </div>
-          {errors.password && (
-            <p className="text-danger">{errors.password.message}</p>
-          )}
-          <div className="form-group">
-            <label className="form-label">Confirm Password:</label>
-            <input
-              type="password"
-              className="form-control"
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              name="confirmPassword"
-            />
-          </div>
-          {errors.confirmPassword && (
-            <p className="text-danger">{errors.confirmPassword.message}</p>
-          )}
-          <br></br>
-          <button
-            className="btn text text-dark fw-bolder"
-            style={{ backgroundColor: "transparent" }}
-          >
-            Create Account
-          </button>
-        </form>
-      </div>
-    </div>
+    <div className="container-fluid">
+            <h1 className="">Welcome! {icons} SongQuotes</h1>
+        <div className="row d-flex justify-content-center">
+            <div className="col-4 m-5">
+                <h1 className="text text-light">Login</h1>
+            {/* Login Form */}
+                <form className="form m-3 text-center" onSubmit={loginHandler}>
+                    <div className="form-group">
+                        <label className="form-label text text-light">Email: </label>
+                        <input className="form-control" type="text" name="email"/>
+                    </div>
+                        {errors.error && <p className="text-danger">{errors.error}</p>}
+                    <div className="form-group">
+                        <label className="text text-light">Password: </label>
+                        <input
+                        className="form-control"
+                        type="password"
+                        name="password"
+                        //   value={user.password}
+                        />
+                    </div>
+                    {errors.password && (
+                    <p className="text-danger">{errors.password.message}</p>
+                    )}
+                    <button
+                    className="btn text text-dark fw-bolder m-3"
+                    style={{ backgroundColor: "transparent" }}
+                    >
+                    Login
+                    </button>
+                </form>
+            </div>
+            <div className="col-4 m-5">
+                <h1 className="text text-light">Register</h1>
+                <form className="form" onSubmit={registerHandler}>
+                    <div className="form-group">
+                        <label className="form-label">First Name:</label>
+                        <input
+                        type="text"
+                        className="form-control"
+                        onChange={(e) => setFirstName(e.target.value)}
+                        name="firstName"
+                        />
+                    </div>
+                    {errors.firstName && (
+                        <p className="text-danger">{errors.firstName.message}</p>
+                        )}
+                    <div className="form-group">
+                        <label className="form-label">Last Name:</label>
+                        <input
+                        type="text"
+                        className="form-control"
+                        onChange={(e) => setLastName(e.target.value)}
+                        name="lastName"
+                        />
+                    </div>
+                    {errors.lastName && (
+                        <p className="text-danger">{errors.lastName.message}</p>
+                        )}
+                    <div className="form-group">
+                        <label className="form-label">Email:</label>
+                        <input
+                        type="text"
+                        className="form-control"
+                        onChange={(e) => setEmail(e.target.value)}
+                        name="email"
+                        />
+                    </div>
+                    {errors.email && (
+                        <p className="text-danger">{errors.email.message}</p>
+                        )}
+                    <div className="form-group">
+                        <label className="form-label">Password:</label>
+                        <input
+                        type="password"
+                        className="form-control"
+                        onChange={(e) => setPassword(e.target.value)}
+                        name="password"
+                        />
+                    </div>
+                    {errors.password && (
+                        <p className="text-danger">{errors.password.message}</p>
+                        )}
+                    <div className="form-group">
+                        <label className="form-label">Confirm Password:</label>
+                        <input
+                        type="password"
+                        className="form-control"
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        name="confirmPassword"
+                        />
+                    </div>
+                    {errors.confirmPassword && (
+                        <p className="text-danger">{errors.confirmPassword.message}</p>
+                        )}
+                    <button
+                        className="btn text text-dark fw-bolder m-3"
+                        style={{ backgroundColor: "transparent" }}
+                        >
+                        Create Account
+                    </button>
+                </form>
+            </div>
+        </div>
+            </div>
+    //   {/* Registration Form */}
+    // </div>
   );
 };
 
