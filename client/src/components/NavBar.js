@@ -1,16 +1,43 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faIcons,
+  faList,
+  faCirclePlus,
+  faShuffle,
+  faCircleXmark,
+  faArrowRightToBracket,
+} from "@fortawesome/free-solid-svg-icons";
 
 const navbar = () => {
+  const icons = <FontAwesomeIcon icon={faIcons} />;
+  const list = <FontAwesomeIcon icon={faList} />;
+  const circle = <FontAwesomeIcon icon={faCirclePlus} />;
+  const shuffle = <FontAwesomeIcon icon={faShuffle} />;
+  const xmark = <FontAwesomeIcon icon={faCircleXmark} />;
+  const logout = <FontAwesomeIcon icon={faArrowRightToBracket} />;
+
   return (
     <div className="d-flex justify-content-around navbar">
       <Link to="/" id="song-quotes">
-        <h1>Song Quotes</h1>
+<<<<<<< HEAD
+        <h1 className="font-link">LyriQuote</h1>
       </Link>
       <Link to="/songquotes/add">
-        <button className="btn">Add Quotes</button>
+        <button className="btn">Add Lyric Quote</button>
+=======
+        {icons} Song Quotes
       </Link>
-      <button className="btn">Log In</button>
+      <Link to="/songquotes/add">
+        <a href="/songquotes/add" className="fs-3">
+          {circle} Add Quotes
+        </a>
+>>>>>>> 22b1989ad63b54d92c3a219389a9effdcc7d3acb
+      </Link>
+      <a href="/login" className="btn">
+        {logout} Login
+      </a>
     </div>
   );
 };

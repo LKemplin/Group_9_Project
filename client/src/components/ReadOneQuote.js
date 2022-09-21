@@ -32,7 +32,7 @@ const ReadOneQuote = (props) => {
 
   return (
     <div className="container-fluid d-flex justify-content-center">
-      <div className="card col-8">
+      <div className="card col-8 song-bg">
         <h2 className="card-title">{song.title}</h2>
         <h3 className="card-subtitle">{song.artist}</h3>
         {song.album && (
@@ -44,7 +44,11 @@ const ReadOneQuote = (props) => {
             {new Date(song.createdAt).toLocaleDateString()}
           </p>
           <p>Rating: {song.rating}</p>
+<<<<<<< HEAD
           <p>Quotes: {song.quote}</p>
+=======
+          <p>Lyric Quote: {song.quote}</p>
+>>>>>>> c8eca85e86fdea0791736ef2f4aff6ea68124393
           <Link to={`/songquotes/edit/${id}`}>
             <button className="btn m-2">Edit</button>
           </Link>

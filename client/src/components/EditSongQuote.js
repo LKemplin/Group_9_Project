@@ -54,7 +54,7 @@ const EditSongQuote = (props) => {
   };
 
   return (
-    <div className="container">
+    <div className="container-fluid">
       <div className="d-flex justify-content-center m-3 form-div">
         <form
           className="form p-3 border border-dark border-1 text-center song-form"
