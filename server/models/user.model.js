@@ -14,12 +14,7 @@ const UserSchema = new mongoose.Schema(
     email: {
       type: String,
       required: [true, "Please enter email."],
-      validate: {
-        validator: function (v) {
-          return /^([\w-\.]+@([\w-]+\.)+[\w-]+)?$/.test(v);
-        },
-        message: "Please enter a valid email address.",
-      },
+      unique: true,
     },
     password: {
       type: String,
@@ -34,24 +29,21 @@ UserSchema.virtual("confirmPassword")
   .get(() => this._confirmPassword)
   .set((value) => (this._confirmPassword = value));
 
-UserSchema.pre("validate", function (next) {
+UserSchema.pre("save", function (next) {
   if (this.password !== this._confirmPassword) {
-    this.invalidate("confirmPassword", "Passwords must match.");
+    this.invalidate("confirmPassword", "Password must match!");
   }
   next();
 });
 
-UserSchema.pre("validate", function (next) {
-  bcrypt
-    .hash(this.password, 10)
-    .then((hash) => {
-      this.password = hash;
-      next();
-    })
-    .catch((err) => {
-      console.log("INSIDE ERROR BLOCK");
-      console.log(err);
-    });
+UserSchema.pre("save", async function (next) {
+  try {
+    const hashedPassword = await bcrypt.hash(this.password, 10); //before saving,
+    this.password = hashedPassword;
+    next();
+  } catch (e) {
+    console.log("ERROR in hashing", e);
+  }
 });
 
 module.exports = mongoose.model("User", UserSchema);

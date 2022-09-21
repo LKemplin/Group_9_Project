@@ -1,69 +1,75 @@
-const User = require('../models/user.model')
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken')
+const User = require("../models/user.model");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
+const SECRET = process.env.JWT_SECRET;
 
-const createNewUser = async (req, res) => {
-    const {body} = req;
-
-    // make sure user doesn't already exist
-    try {
-        const queriedUser = await User.findOne({email: body.email});
-        if (queriedUser) {
-            console.log(queriedUser);
-            res.status(400).json({errMsg: "This user already exists."});
-            return;
-        }
-    } catch (error) {
-        res.status(400).json(error);
-    }
-
-    // create new user
-
-    let newUser = new User(body);
-
-    try {
-        const newUserObj = await newUser.save();
-        res.json(newUserObj);
-    } catch (error) {
-        res.status(400).json(error)
-    }
-}
+const register = async (req, res) => {
+  try {
+    const user = new User(req.body);
+    const newUser = await user.save();
+    console.log("New user", newUser);
+    const userToken = jwt.sign(
+      {
+        _id: newUser._id,
+        email: newUser.email,
+      },
+      SECRET
+    );
+    res
+      .status(201)
+      .cookie("userToken", userToken)
+      .json({
+        successMessage: "user created",
+        user: {
+          _id: newUser._id,
+          email: newUser.email,
+        },
+      });
+  } catch (e) {
+    console.log("Error in user creation", e);
+    res.json(e);
+  }
+};
 
 const login = async (req, res) => {
-    const {body} = req;
-    if (!body.email) {
-        res.status(400).json({error: "Please enter email."});
-        return;
-    }
-
-    let userQuery;
-
+  const userDoc = await User.findOne({ email: req.body.email });
+  if (!userDoc) {
+    res.status(400).json({ message: "Invalid login" });
+  } else {
     try {
-        userQuery = await User.findOne({email: body.email});
-        if (userQuery === null) {
-            res.status(400).json({error: "email not found"})
-        }
-    } catch (error) {
-        res.status(400).json(error);
+      const isPasswordValid = await bcrypt.compare(
+        req.body.password,
+        userDoc.password
+      );
+      if (!isPasswordValid) {
+        res.status(400).json({ message: "Invalid login" });
+      } else {
+        const userToken = jwt.sign(
+          {
+            _id: userDoc._id,
+            email: userDoc.email,
+          },
+          SECRET
+        );
+        res.cookie("userToken", userToken).json({
+          successMessage: "user created",
+          user: {
+            _id: userDoc._id,
+            email: userDoc.email,
+          },
+        });
+      }
+    } catch (e) {
+      console.log("Login error", e);
+      res.status(400).json({ message: "invalid login" });
     }
+  }
+};
 
-    const passwordCheck = bcrypt.compareSync(body.password, userQuery.password);
+const logout = (req, res) => {
+  res.clearCookie("userToken");
+  res.json({ message: "You are logged out" });
+};
 
-    if (!passwordCheck) {
-        res.status(400).json({error: "Email and password do not match"});
-        return;
-    }
-
-    //If we've gotten to this point, then email and password are valid.  Time to send JSON web token.
-    const userToken = jwt.sign({_id: userQuery._id}, "purpleyarn");
-    console.log(userToken);
-
-    res
-        .cookie("usertoken", userToken, "purpleyarn", {
-            httpOnly: true,
-            expires: new Date(Date.now() + 9000000000),
-        })
-        .json({message: "successful login"});
-}
-
-module.exports = { createNewUser, login }
+module.exports = { register, login, logout };
