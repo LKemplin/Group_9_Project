@@ -3,7 +3,7 @@ import SongQuotesCards from "../components/SongQuotesCards";
 
 const Dashboard = (props) => {
   const { songCards, setSongCards } = props;
-
+  console.log(props)
   return (
     <div>
       <NavBar />

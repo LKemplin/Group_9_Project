@@ -12,7 +12,7 @@ const EditSongQuote = (props) => {
   const [album, setAlbum] = useState("");
   const [postedBy, setPostedBy] = useState("");
   const [rating, setRating] = useState();
-  const [quotes, setQuotes] = useState();
+  const [quote, setQuote] = useState();
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
@@ -25,11 +25,11 @@ const EditSongQuote = (props) => {
         setAlbum(results.data.album);
         setPostedBy(results.data.postedBy);
         setRating(results.data.rating);
-        setQuotes(results.data.quotes);
+        setQuote(results.data.quote);
       })
       .catch((err) => {
         console.log(err.data);
-      });
+      })
   }, []);
 
   const updateHandler = (e) => {
@@ -41,7 +41,7 @@ const EditSongQuote = (props) => {
         album,
         postedBy,
         rating,
-        quotes,
+        quote,
       })
       .then((results) => {
         console.log(results);
@@ -119,15 +119,15 @@ const EditSongQuote = (props) => {
           </div>
           <div>
             <label className="form-label">Quote:</label>
-            {errors.quotes && (
-              <p className="text-danger">{errors.quotes.message}</p>
+            {errors.quote && (
+              <p className="text-danger">{errors.quote.message}</p>
             )}
             <textarea
-              value={quotes}
+              value={quote}
               className="form-control"
               cols="30"
               rows="10"
-              onChange={(e) => setQuotes(e.target.value)}
+              onChange={(e) => setQuote(e.target.value)}
             ></textarea>
           </div>
           <div>

@@ -44,7 +44,7 @@ const ReadOneQuote = (props) => {
             {new Date(song.createdAt).toLocaleDateString()}
           </p>
           <p>Rating: {song.rating}</p>
-          <p>Quotes: {song.quotes}</p>
+          <p>Quotes: {song.quote}</p>
           <Link to={`/songquotes/edit/${id}`}>
             <button className="btn m-2">Edit</button>
           </Link>
