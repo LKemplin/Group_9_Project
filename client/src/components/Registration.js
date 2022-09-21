@@ -1,89 +1,50 @@
+import { useState } from "react";
 import axios from "axios";
-import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faIcons } from "@fortawesome/free-solid-svg-icons";
 
-const Logandreg = (props) => {
-  //useState for user in app.js
-  const { setIsLoggedIn } = props;
-  const [errors, setErrors] = useState({});
+function Registration({ setIsLoggedIn }) {
+  //const {setIsLoggedIn} = props
   const icons = <FontAwesomeIcon icon={faIcons} />;
-
   const navigate = useNavigate();
   const [user, setUser] = useState({
+    firstName: "",
+    lastName: "",
     password: "",
+    confirmPassword: "",
     email: "",
   });
+
+  const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-  const loginHandler = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8000/api/login", user, {
+      .post("http://localhost:8000/api/register", user, {
         withCredentials: true,
       })
       .then((res) => {
-        console.log(res);
+        console.log("RES", res.data);
         setIsLoggedIn(true);
-        navigate("/songquotes/dashboard");
+        navigate("/");
       })
       .catch((err) => {
-        console.log("error in login", err);
+        console.log("error in registration", err);
         setErrors(err.response.data);
       });
   };
-
   return (
     <div className="container-fluid">
       <h1 className="">Welcome! {icons} SongQuotes</h1>
       <div className="row d-flex justify-content-center">
         <div className="col-4 m-5">
-          <h1 className="text text-light">Login</h1>
-          {/* Login Form */}
-          <form className="form m-3 text-center" onSubmit={loginHandler}>
-            <div className="form-group">
-              <label className="form-label text text-light">Email: </label>
-              <input
-                className="form-control"
-                type="text"
-                name="email"
-                value={user.email}
-                onChange={handleChange}
-              />
-            </div>
-            {errors.error && <p className="text-danger">{errors.error}</p>}
-            <div className="form-group">
-              <label className="text text-light">Password: </label>
-              <input
-                className="form-control"
-                type="password"
-                name="password"
-                value={user.password}
-                onChange={handleChange}
-              />
-            </div>
-            {errors.password && (
-              <p className="text-danger">{errors.password.message}</p>
-            )}
-            <button
-              className="btn text text-dark fw-bolder m-3"
-              style={{ backgroundColor: "transparent" }}
-            >
-              Login
-            </button>
-          </form>
-          <br></br>
-          <p>
-            No account? <a href="/register">Register</a>
-          </p>
-        </div>
-        {/* <div className="col-4 m-5">
           <h1 className="text text-light">Register</h1>
-          <form className="form" onSubmit={registerHandler}>
+          <form className="form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label className="form-label">First Name:</label>
               <input
@@ -156,12 +117,14 @@ const Logandreg = (props) => {
               Create Account
             </button>
           </form>
-        </div> */}
+          <br></br>
+          <p>
+            Already registered? <a href="/login">Log In</a>
+          </p>
+        </div>
       </div>
     </div>
-    //   {/* Registration Form */}
-    // </div>
   );
-};
+}
 
-export default Logandreg;
+export default Registration;
