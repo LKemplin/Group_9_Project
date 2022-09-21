@@ -135,10 +135,10 @@ button {
   margin-top: 75px;
 }
 
-.form-group {
+/* .form-group {
   display: flex;
   margin: 20px;
-}
+} */
 
 .login-registration {
   display: flex;
@@ -160,7 +160,7 @@ a {
 }
 
 .welcome {
-  position: absolute;
+  /* position: absolute; */
   text-align: center;
   color: rgb(45, 30, 61);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
