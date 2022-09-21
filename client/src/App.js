@@ -5,7 +5,7 @@ import Dashboard from "./views/Dashboard";
 import AddQuotes from "./views/AddQuotes";
 import Details from "./views/Details";
 import EditQuote from "./views/EditQuote";
-import Logandreg from "./components/Logandreg";
+import logandreg from "./components/logandreg";
 // import logo from "./logo.svg";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -25,7 +25,7 @@ function App() {
       {/* <NavBar /> */}
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<Logandreg />} />
+          <Route path="/login" element={<logandreg />} />
           <Route path="/" element={<Navigate to="/songquotes/dashboard" />} />
           <Route
             path="/songquotes/dashboard"

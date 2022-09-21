@@ -8,7 +8,7 @@ const Dashboard = (props) => {
     <div>
       <NavBar />
       <br></br>
-      <div className="">
+      <div>
         <SongQuotesCards songCards={songCards} setSongCards={setSongCards} />
       </div>
     </div>

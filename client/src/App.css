@@ -43,7 +43,8 @@
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   text-shadow: 1px 1px black;
   color: rgb(45, 30, 61);
-  width: 2000px;
+  width: 1000px;
+  /* border: 2px dotted red; */
 }
 
 .btn {
@@ -132,10 +133,10 @@ button {
   margin-top: 75px;
 }
 
-.form-group {
+/* .form-group {
   display: flex;
   margin: 20px;
-}
+} */
 
 .login-registration {
   display: flex;
@@ -157,7 +158,7 @@ a {
 }
 
 .welcome {
-  position: absolute;
+  /* position: absolute; */
   text-align: center;
   color: rgb(45, 30, 61);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
