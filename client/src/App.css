@@ -60,9 +60,9 @@
 .card {
   margin: 40px;
   margin-bottom: 50px;
-  background-color: rgb(228, 151, 113);
-  opacity: 50%;
-  text-emphasis-color: purple;
+  background-color: rgb(228, 151, 113, 0.5);
+  /* opacity: 50%; */
+
   text-decoration: #000;
 }
 
@@ -180,3 +180,8 @@ a {
   background-size: cover;
   border: 2px solid #e9385a;
 } */
+
+.quote-text {
+  text-shadow: 3px;
+  text-emphasis-color: rgb(61, 61, 175);
+}

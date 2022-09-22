@@ -44,12 +44,16 @@ const ReadOneQuote = (props) => {
             {new Date(song.createdAt).toLocaleDateString()}
           </p>
           <p>Rating: {song.rating}</p>
-          <p>Lyric Quote: {song.quote}</p>
+          <h5 className=" shadow-lg p-3 mb-5">
+            <strong>
+              Lyric Quote: <em className="text-primary">{song.quote}</em>
+            </strong>
+          </h5>
           <Link to={`/songquotes/edit/${id}`}>
-            <button className="btn m-2">Edit</button>
+            <button className="btn m-5">Edit</button>
           </Link>
           <Link to={`/songquotes/delete/${id}`}>
-            <button className="btn m-2" onClick={() => deleteHandler(song._id)}>
+            <button className="btn m-5" onClick={() => deleteHandler(song._id)}>
               Delete
             </button>
           </Link>
